@@ -7,9 +7,9 @@ import 'package:quiz_app_self_udemy/quiz_data.dart';
 import 'package:quiz_app_self_udemy/main.dart';
 
 class ResultScreen extends StatelessWidget{
-  const ResultScreen({required this.choosenAnswer,required this.ontapRe,super.key});
-  final List<String> choosenAnswer;
-  final void Function() ontapRe;
+  const ResultScreen({super.key});
+  //final List<String> choosenAnswer;
+  //final void Function() ontapRe;
 
   List<Map<String,Object>>getSummaryData(){
     List<Map<String,Object>> Summary=[];
@@ -17,7 +17,7 @@ class ResultScreen extends StatelessWidget{
       Summary.add({
         'questionIndex': i,
         'questionText': questions,
-        'coosenAnswer': choosenAnswer,
+        'coosenAnswer': selectedAnswer,
         'correctAnswer': questions[i].options[0],
       });
     }
@@ -27,6 +27,8 @@ class ResultScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+
+
     return Container(
       height: double.infinity,
       width: double.infinity,
@@ -51,6 +53,7 @@ class ResultScreen extends StatelessWidget{
           ElevatedButton(
               onPressed: (){
                 Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>const StaringPage()));
+                print(selectedAnswer);
                 selectedAnswer=[];
               },
               child: const Text("restart")

@@ -25,7 +25,7 @@ class _quizScreenState extends State<quizScreen>{
       if(questions.length==index){
         Navigator.pushReplacement
           (context, MaterialPageRoute
-          (builder: (context)=> ResultScreen(ontapRe: ontapRestart,choosenAnswer: selectedAnswer,)
+          (builder: (context)=> const ResultScreen()
         ));
       }
     });
