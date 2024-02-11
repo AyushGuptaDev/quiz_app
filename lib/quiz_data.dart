@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 class QuestionData {
   const QuestionData(this.question,this.options);

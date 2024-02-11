@@ -4,7 +4,8 @@ import 'package:quiz_app_self_udemy/Answer_botton.dart';
 import 'package:quiz_app_self_udemy/backgroundColour.dart';
 import 'package:quiz_app_self_udemy/quiz_data.dart';
 import 'package:quiz_app_self_udemy/result_screen.dart';
-
+import 'package:quiz_app_self_udemy/main.dart';
+List<String> selectedAnswer=[];
 class quizScreen extends StatefulWidget{
   const quizScreen({super.key});
   @override
@@ -12,18 +13,33 @@ class quizScreen extends StatefulWidget{
 }
 
 class _quizScreenState extends State<quizScreen>{
-
-  var selectedAnswer=[];
+  //List<String> selectedAnswer=[];
   var index=0;
+
+
   void onSelectAnswer(String ClickedAnswer){
     setState(() {
       selectedAnswer.add(ClickedAnswer);
+      print(selectedAnswer[index]);
       index++;
       if(questions.length==index){
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>ResultScreen()));
+        Navigator.pushReplacement
+          (context, MaterialPageRoute
+          (builder: (context)=> ResultScreen(ontapRe: ontapRestart,choosenAnswer: selectedAnswer,)
+        ));
       }
     });
   }
+
+  void  ontapRestart (){
+    Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>const StaringPage()));
+
+    print("presed");
+    // setState(() {
+    //
+    // });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +64,7 @@ class _quizScreenState extends State<quizScreen>{
             ),
 
             const SizedBox(height: 30,),
-            ... currentQuestion.options.map((item) {
+             ... currentQuestion.options.map((item) {
               return AnswerBotton(
                   ontap: () => onSelectAnswer(item),
                   choosedAnswer: (item)
