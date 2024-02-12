@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:quiz_app_self_udemy/Quiz.dart';
-import 'package:quiz_app_self_udemy/backgroundColour.dart';
+import 'package:quiz_app_self_udemy/answer_summary.dart';
+import 'package:quiz_app_self_udemy/style_data.dart';
 import 'package:quiz_app_self_udemy/quiz_data.dart';
 import 'package:quiz_app_self_udemy/main.dart';
 
@@ -16,8 +17,8 @@ class ResultScreen extends StatelessWidget{
     for (int i=0;i<questions.length;i++){
       Summary.add({
         'questionIndex': i,
-        'questionText': questions,
-        'coosenAnswer': selectedAnswer,
+        'questionText': questions[i].question,
+        'coosenAnswer': selectedAnswer[i],
         'correctAnswer': questions[i].options[0],
       });
     }
@@ -39,17 +40,13 @@ class ResultScreen extends StatelessWidget{
         children: [
           const Text ("no of correct answer"),
           Container(
-            height: 200,
-            child: const Column(
-              children: [
-                Row(
-                  children: [
-
-                  ],
-                )
-              ],
+            alignment: Alignment.topLeft,
+              color: Colors.white,
+              //width: 300,
+              height: 500,
+              child: answerSumarry(summary: getSummaryData(),)
             ),
-          ),
+
           ElevatedButton(
               onPressed: (){
                 Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>const StaringPage()));

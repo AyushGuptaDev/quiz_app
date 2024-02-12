@@ -25,3 +25,12 @@ Decoration backgroundColour
     )
   );
 }
+
+TextStyle ResultScreenDataQuestion({Color fill=Colors.cyan}){
+  return const  TextStyle(
+    decoration: TextDecoration.none,
+    fontSize: 20,
+    color: Colors.blueGrey,
+
+  );
+}

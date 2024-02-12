@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app_self_udemy/Answer_botton.dart';
-import 'package:quiz_app_self_udemy/backgroundColour.dart';
+import 'package:quiz_app_self_udemy/style_data.dart';
 import 'package:quiz_app_self_udemy/quiz_data.dart';
 import 'package:quiz_app_self_udemy/result_screen.dart';
-import 'package:quiz_app_self_udemy/main.dart';
+
 List<String> selectedAnswer=[];
 class quizScreen extends StatefulWidget{
   const quizScreen({super.key});
@@ -31,14 +31,13 @@ class _quizScreenState extends State<quizScreen>{
     });
   }
 
-  void  ontapRestart (){
-    Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>const StaringPage()));
-
-    print("presed");
-    // setState(() {
-    //
-    // });
-  }
+  // void  ontapRestart (){
+  //   Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>const StaringPage()));
+  //   print("presed");
+  //   // setState(() {
+  //   //
+  //   // });
+  // }
 
 
   @override

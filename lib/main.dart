@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app_self_udemy/Quiz.dart';
-import 'package:quiz_app_self_udemy/backgroundColour.dart';
+import 'package:quiz_app_self_udemy/style_data.dart';
 
 void main() {
   runApp(const MyApp());
