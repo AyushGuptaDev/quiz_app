@@ -63,7 +63,7 @@ class _quizScreenState extends State<quizScreen>{
             ),
 
             const SizedBox(height: 30,),
-             ... currentQuestion.options.map((item) {
+             ... currentQuestion.shuffleOption().map((item) {
               return AnswerBotton(
                   ontap: () => onSelectAnswer(item),
                   choosedAnswer: (item)

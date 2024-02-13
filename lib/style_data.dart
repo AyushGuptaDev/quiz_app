@@ -26,11 +26,11 @@ Decoration backgroundColour
   );
 }
 
-TextStyle ResultScreenDataQuestion({Color fill=Colors.cyan}){
-  return const  TextStyle(
+TextStyle resultScreenDataQuestion({Color fill = Colors.cyan,}){
+  return   TextStyle(
     decoration: TextDecoration.none,
     fontSize: 20,
-    color: Colors.blueGrey,
+    color: fill,
 
   );
 }

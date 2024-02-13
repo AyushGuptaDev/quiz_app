@@ -3,6 +3,12 @@ class QuestionData {
   const QuestionData(this.question,this.options);
   final String question;
   final List<String> options;
+
+  List<String> shuffleOption(){
+    final List<String> shuffleAnswer=List.of(options);
+    shuffleAnswer.shuffle();
+    return shuffleAnswer;
+  }
 }
 const questions=[
   QuestionData(

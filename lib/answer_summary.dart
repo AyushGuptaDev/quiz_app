@@ -57,77 +57,37 @@ class answerSumarry extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //   return SingleChildScrollView(
-    //     child: Column(
-    //       crossAxisAlignment: CrossAxisAlignment.start,
-    //       children: summary.map((data) {
-    //         return Padding(
-    //           padding: const EdgeInsets.symmetric(vertical: 8.0),
-    //           child: Row(
-    //             crossAxisAlignment: CrossAxisAlignment.start,
-    //             children: [
-    //               Text(
-    //                 ((data['questionIndex'] as int) + 1).toString(),
-    //                 style: ResultScreenDataQuestion(),
-    //               ),
-    //               SizedBox(width: 10), // Adjust as needed
-    //               Expanded(
-    //                 child: Column(
-    //                   crossAxisAlignment: CrossAxisAlignment.start,
-    //                   children: [
-    //                     Text(
-    //                       data['questionText'] as String,
-    //                       style: ResultScreenDataQuestion(),
-    //                     ),
-    //                     const SizedBox(height: 5),
-    //                     Text(
-    //                       'Chosen Answer: ${data['coosenAnswer']}',
-    //                       style: ResultScreenDataQuestion(),
-    //                     ),
-    //                     const SizedBox(height: 3),
-    //                     Text(
-    //                       'Correct Answer: ${data['correctAnswer']}',
-    //                       style: ResultScreenDataQuestion(),
-    //                     ),
-    //                   ],
-    //                 ),
-    //               )
-    //             ],
-    //           ),
-    //         );
-    //       }).toList(),
-    //     ),
-    //   );
-    // }
+
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+
         children: summary.map((data) {
           return Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 ((data['questionIndex'] as int) + 1).toString(),
-                style: ResultScreenDataQuestion(),
+                style: resultScreenDataQuestion(),
               ),
-              SizedBox(width: 10), // Adjust as needed for spacing
+              const SizedBox(width: 10), // Adjust as needed for spacing
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       data['questionText'] as String,
-                      style: ResultScreenDataQuestion(fill: Colors.blue),
+                      style: resultScreenDataQuestion(),
                     ),
                     const SizedBox(height: 5),
                     Text(
                       'Chosen Answer: ${data['coosenAnswer']}',
-                      style: ResultScreenDataQuestion(),
+                      style: resultScreenDataQuestion(fill: Colors.lightBlueAccent),
                     ),
                     const SizedBox(height: 3),
                     Text(
                       'Correct Answer: ${data['correctAnswer']}',
-                      style: ResultScreenDataQuestion(fill: Colors.pink),
+                      style: resultScreenDataQuestion(fill: Colors.pink),
                     ),
                   ],
                 ),
@@ -139,3 +99,49 @@ class answerSumarry extends StatelessWidget {
     );
   }
 }
+
+
+
+//     return SingleChildScrollView(
+//       child: Column(
+//         crossAxisAlignment: CrossAxisAlignment.start,
+//         children: summary.map((data) {
+//           return Padding(
+//             padding: const EdgeInsets.symmetric(vertical: 8.0),
+//             child: Row(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Text(
+//                   ((data['questionIndex'] as int) + 1).toString(),
+//                   style: resultScreenDataQuestion(),
+//                 ),
+//                 SizedBox(width: 10), // Adjust as needed
+//                 Expanded(
+//                   child: Column(
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: [
+//                       Text(
+//                         data['questionText'] as String,
+//                         style: resultScreenDataQuestion(),
+//                       ),
+//                       const SizedBox(height: 5),
+//                       Text(
+//                         'Chosen Answer: ${data['coosenAnswer']}',
+//                         style: resultScreenDataQuestion(),
+//                       ),
+//                       const SizedBox(height: 3),
+//                       Text(
+//                         'Correct Answer: ${data['correctAnswer']}',
+//                         style: resultScreenDataQuestion(),
+//                       ),
+//                     ],
+//                   ),
+//                 )
+//               ],
+//             ),
+//           );
+//         }).toList(),
+//       ),
+//     );
+//   }
+// }
